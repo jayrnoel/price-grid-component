@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --teal: hsl(179, 47%, 52%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --bright-yellow-hover: hsla(71, 73%, 54%, 80%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --white-alpha: hsla(0, 0%, 100%, 80%);
+  --shadow: hsla(100, 100%, 0%, 10%);
+  --bold: 700;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: Karla, sans-serif;
+  background-color: var(--light-gray);
+  line-height: 1.2rem;
+}
+.container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.info__card {
+  max-width: 635px;
+  width: 85%;
+  box-shadow: 0 10px 30px var(--shadow);
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* -----CARD SECTIONS--------- */
+.card__community {
+  background-color: var(--white);
+  padding: 1.2rem 1.5rem;
+}
+.card__pricing {
+  background-color: var(--cyan);
+  padding: 1.2rem 1.5rem;
+  color: var(--white);
+}
+.card__about-us {
+  background-color: var(--teal);
+  padding: 1.2rem 1.5rem;
+  color: var(--white);
+}
+
+/* ------TYPOGRAPHY---------- */
+.card__title {
+  color: var(--cyan);
+  font-size: 1.2rem;
+}
+.card__pricing h2,
+.card__about-us h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.card__highlight {
+  color: var(--bright-yellow);
+  font-weight: var(--bold);
+  font-size: 1rem;
+}
+.card__product-details {
+  color: var(--grayish-blue);
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+}
+.card__why-us {
+  list-style-type: none;
+  padding-left: 0;
+  color: var(--white-alpha);
+}
+.price__recurring {
+  color: var(--white-alpha);
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-left: 1ch;
+  font-weight: 400;
+}
+.card__price {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: var(--bold);
+}
+.price__info {
+  margin-top: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.card__why-us {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--white-alpha);
+  line-height: 1.2rem;
+}
+
+/* ------COMPONENTS---- */
+.sign-up {
+  width: 100%;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  background-color: var(--bright-yellow);
+  border: none;
+  color: var(--white);
+  box-shadow: 0 0 25px var(--shadow);
+  margin-bottom: 1.1rem;
+  cursor: pointer;
+}
+.sign-up:hover {
+  background-color: var(--bright-yellow-hover);
+}
+
+@media (min-width: 720px) {
+  .info__card {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .card__community {
+    grid-column: span 6;
+  }
+  .card__pricing {
+    grid-column: span 3;
+  }
+  .card__about-us {
+    grid-column: span 3;
+  }
+
+  .card__community,
+  .card__pricing,
+  .card__about-us {
+    padding: 1.2rem 2rem;
+  }
+}
